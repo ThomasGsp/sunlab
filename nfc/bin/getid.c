@@ -7,6 +7,6 @@ main ()
 {
     setuid (0);
     char cmdLine[256];
-    sprintf(cmdLine, "/usr/bin/nfc-list| egrep '(UID|PUPI)' | awk -F':' '{print $2}' | sed 's/ //g'");
+    sprintf(cmdLine, "nfc-list| egrep '(UID|PUPI)' | awk -F':' '{print $2}' | sed 's/ //g'");
     return system(cmdLine);
 }

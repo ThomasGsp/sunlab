@@ -40,7 +40,7 @@ if (isset($_SESSION['username'])) {
         <button name="Submit" id="submit" class="btn btn-lg btn-primary btn-block" type="submit">OUVRIR LA POSTE</button>
 
         <div id="message"></div>
-        <a href="common/signup.php">S'enregistrer</a> | <a href="common/user.php">Gestion</a>
+        <a href="common/signup.php">S'enregistrer</a> | <a href="common/user.php">Gestion</a> | <a href="lastaccess.php"> Dernières ouvertures </a>
       </form>
 
 

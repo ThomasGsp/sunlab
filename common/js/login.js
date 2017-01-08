@@ -37,6 +37,7 @@ $(document).ready(function () {
                     //console.log(html.response + ' ' + html.username);
                     if (html.response === 'true' || html.response === '1')
                     {
+
                             location.reload();
                             return html.username;
                     } else {

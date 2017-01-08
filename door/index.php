@@ -64,7 +64,7 @@ $_SESSION['lastpage'] = "index";
 
 
         <a href="main_login.php" class="btn btn-lg btn-primary btn-block">Ouvrir de nouveau</a>
-        <a href="common/user_deco.php?type=soft">Se déconnecter</a> | <a href="common/user.php">Gestion</a>
+        <a href="common/user_deco.php?type=soft">Se déconnecter</a> | <a href="common/user.php">Gestion</a> | <a href="lastaccess.php"> Dernières ouvertures </a>
       </div>
     </div> <!-- /container -->
   </body>
