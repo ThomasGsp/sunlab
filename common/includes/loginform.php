@@ -6,7 +6,7 @@ class LoginForm
 {
 
 
-    private function testldap($myusername, $mypassword)
+    private function testldap($myusername, $mypassword, $page)
     {
         $data = $this->getinfouser($myusername);
 
@@ -15,13 +15,18 @@ class LoginForm
         $ldapconnection = json_decode($ldapconnection);
 
         if ($ldapconnection->result)
-            return $data;
+        {
+            if ($page == "members")
+                return $ldapconnection;
+            else
+                return $data;
+        }
         else
             return false;
 
     }
 
-    private function testlocal($myusername, $mypassword)
+    private function testlocal($myusername, $mypassword, $page)
     {
 
         $data = $this->getinfouser($myusername);
@@ -69,7 +74,7 @@ class LoginForm
 
 
         $success = array();
-
+        $success['text'] = "<script type='text/JavaScript'>location.reload();</script>";
         if ($curr_attempts >= $max_attempts && $timeDiff < $login_timeout)
         {
             $success['text'] = "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>Nombre de tentatives max atteintes...  ".$timeout_minutes." minutes avant le déblocage</div>";
@@ -78,10 +83,10 @@ class LoginForm
         }
         else
         {
-            $local = $this->testlocal($myusername, $mypassword);
+            $local = $this->testlocal($myusername, $mypassword, $page);
 
             if ($mod_ldap == true and  $local == false)
-                $ldap = $this->testldap($myusername, $mypassword);
+                $ldap = $this->testldap($myusername, $mypassword, $page);
             else
                 $ldap = false;
 
@@ -97,12 +102,17 @@ class LoginForm
                     $member->date = $datetimeNow;
 
                     if($ldap)
+                    {
                         $member->regtype = "ldap";
+                        $success['text'] = "<div class=\"alert alert-info alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>Bonjour ".$ldap->firstname." ".$ldap->name."! Vous êtes bien enregistré pour cette séance !<script type='text/JavaScript'> setTimeout('location.href = \"index.php\";', 7000);</script></div>";
+                    }
                     else
+                    {
                         $member->regtype = "local";
+                        $success['text'] = "<div class=\"alert alert-info alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>Bonjour ".$local->firstname." ".$local->name."! Vous êtes bien enregistré pour cette séance !<script type='text/JavaScript'> setTimeout('location.href = \"index.php\";', 7000);</script></div>";
+                    }
 
                     $member->member();
-                    $success['text'] = "<div class=\"alert alert-info alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>Bonjour ".$local->firstname." ".$local->name."! Vous êtes bien enregistré pour cette séance !<script type='text/JavaScript'> setTimeout('location.href = \"index.php\";', 7000);</script></div>";
                     $success['type'] = "valid";
                     $success['code'] = true;
                 }
