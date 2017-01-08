@@ -41,7 +41,7 @@ else
     <div class="form-signin">
         <?php echo $text; ?>
         <br/>
-        <a href="../main_login.php">Retour à l'index</a>
+        <a href="/" >Retour à l'index</a>
     </div>
 </div> <!-- /container -->
 </body>
