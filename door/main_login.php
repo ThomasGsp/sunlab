@@ -20,7 +20,7 @@ if (isset($_SESSION['username'])) {
   <body>
     <div class="container">
       <form class="form-signin" name="form1" method="post" action="">
-        <img src="../common/images/logo_home_maroon.png" class="img-responsive" alt="Logo Sunlab"/>
+        <a href="/" ><img src="../common/images/logo_home_maroon.png" class="img-responsive" alt="Logo Sunlab"/></a>
         <h2>Déverrouillage de l'acces du SunLab.</h2>
         <p> Le <a href="http://mysunlab.org">Sunlab</a> est le Fablab qui couvre la communauté de commune de <a href="http://www.versaillesgrandparc.fr/index.php?id=181&tx_ttnews[tt_news]=1821&cHash=d435ed61f910bf42163d46c022cc5b1b">Versailles Grand Parc</a>.<br/>
           Il est géré par l'<a href="http://hatlab.fr">association Hatlab</a> et il est situé au 185 Avenue Leclerc &agrave; Viroflay.<br/>

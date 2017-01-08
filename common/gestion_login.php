@@ -22,7 +22,7 @@ if (isset($_SESSION['username'])) {
 <body>
 <div class="container">
     <form class="form-signin" name="form1" method="post" action="">
-        <img src="images/logo_home_maroon.png" class="img-responsive" alt="Logo Sunlab"/>
+        <a href="/" > <img src="images/logo_home_maroon.png" class="img-responsive" alt="Logo Sunlab"/></a>
         <h2>Accès à la page de gestion de votre compte</h2>
 
         <input name="myusername" id="myusername" type="text" class="form-control" placeholder="Username" autofocus>
