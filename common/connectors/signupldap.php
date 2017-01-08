@@ -15,8 +15,8 @@
 
       <form  class="form-signup" id="usersignupldap" name="usersignupldap" method="post">
         <h2 class="form-signup-heading"> Etape 1: Vous identifier </h2>
-        Vous avez la possibiliter de vous enregistrer en utilisant le compte LDAP de l'association.
-        Cela permet d'utiliser les différents services dédiés au sunlab en ayant une authentification unique.
+        Vous avez la possibilité de vous enregistrer en utilisant le compte LDAP de l'association.
+        Cela permet d'utiliser les différents services dédiés au Sunlab en ayant une authentification unique.
 
         <input id="usernameldap"  class="form-control" placeholder="Username" type="text" name="usernameldap" autofocus />
         <input id="passwordldap"  class="form-control" placeholder="Password" type="password" name="passwordldap" />
