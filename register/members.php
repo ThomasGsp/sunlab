@@ -12,7 +12,7 @@
 <body>
 <div class="container">
     <form class="form-signin" name="form1" method="post" action="">
-        <img src="common/images/logo_home_maroon.png" class="img-responsive" alt="Logo Sunlab"/>
+        <a href="/" ><img src="common/images/logo_home_maroon.png" class="img-responsive" alt="Logo Sunlab"/></a>
         <h2>Vous avez déjà un compte</h2>
         <hr>
         <div id="message"></div>

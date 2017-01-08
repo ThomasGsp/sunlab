@@ -55,7 +55,7 @@ if(isset($_POST["submit"]))
 <div class="container">
     <form class="form-signup" id="usersignup" name="usersignup" method="post" action="#">
         <div class="message"><?php echo $message;?></div>
-        <img src="../common/images/logo_home_maroon.png" class="img-responsive" alt="Logo Sunlab"/>
+        <a href="/" ><img src="../common/images/logo_home_maroon.png" class="img-responsive" alt="Logo Sunlab"/></a>
         <h2>Formulaire de présence</h2>
         <p>
             <h3>Ce formulaire permet d'enregistrer électroniquement sa présence dans le local du Sunlab.</h3>

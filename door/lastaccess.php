@@ -37,7 +37,7 @@ foreach ($list as $last)
 <body>
 <div class="container">
     <form class="form-signin" name="form1" method="post" action="">
-        <img src="../common/images/logo_home_maroon.png" class="img-responsive" alt="Logo Sunlab"/>
+        <a href="/" ><img src="../common/images/logo_home_maroon.png" class="img-responsive" alt="Logo Sunlab"/></a>
 
         <table class="table table-striped">
             <thead>
