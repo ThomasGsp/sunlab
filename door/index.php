@@ -58,7 +58,7 @@ $_SESSION['lastpage'] = "index";
           <h2>Déverrouillage de l'accès du SunLab.</h2>
           <p> Le <a href="http://mysunlab.org">Sunlab</a> est le Fablab qui couvre la communauté de commune de <a href="http://www.versaillesgrandparc.fr/index.php?id=181&tx_ttnews[tt_news]=1821&cHash=d435ed61f910bf42163d46c022cc5b1b">Versailles Grand Parc</a>.<br/>
               Il est géré par l'<a href="http://hatlab.fr">association Hatlab</a> et il est situé au 185 Avenue Leclerc &agrave; Viroflay.<br/>
-              Le Sunlab travaille en relation étroite avec le <a href="http://sqylab.org">Sqylab, le Fablab basé à La Verrriere</a>, juste en face de la Gare SNCF).</p>
+              Le Sunlab travaille en relation étroite avec le <a href="http://sqylab.org">Sqylab, le Fablab basé à La Verrriere</a>, juste en face de la gare SNCF.</p>
 
             <?php echo $text; ?>
 
