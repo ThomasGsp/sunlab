@@ -13,6 +13,16 @@ if(isset($_POST["action"]))
         exit(0);
     }
 }
+
+require(dirname(__DIR__).'/register/common/config.php');
+require(dirname(__DIR__).'/register/common/includes/dbconn.php');
+require(dirname(__DIR__).'/register/common/includes/functions.php');
+require(dirname(__DIR__).'/register/includes/class_register.php');
+
+$listregister = new _register();
+$listregister->listdaymembers();
+
+print_r($listregister);
 ?>
 
 

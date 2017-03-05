@@ -38,6 +38,36 @@ class _register
         return $success;
     }
 
+    function listdaymembers()
+    {
+
+        try {
+
+            $db = new DbConn;
+            $tbl_register_members = $db->tbl_register_members;
+            $tbl_register_guests = $db->tbl_register_guests;
+            $datetimeNow = date("Y-m-d");
+
+            $sql = "SELECT `name`, firstname, `date` FROM ".$tbl_register_guests." WHERE `date` LIKE `:date` ";
+            $stmt = $db->conn->prepare($sql);
+            $stmt->bindParam(':date', $datetimeNow);
+            $stmt->execute();
+            $result1 = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $sql = "SELECT `members.name` AS `name`, `members.firstname` AS `firstname`, `register_members.date` AS `date` FROM members, register_members WHERE register_members.username = members.username and `date` LIKE `:date` ";
+            $stmt = $db->conn->prepare($sql);
+            $stmt->bindParam(':date', $datetimeNow);
+            $stmt->execute();
+            $result2 = $stmt->fetch(PDO::FETCH_ASSOC);
+            $result = array_merge($result1, $result2);
+            return $result;
+
+        } catch (PDOException $e) {
+            $err = "Error: " . $e->getMessage();
+        }
+        $resp = ($err == '') ? 'true' : $err;
+        return $resp;
+    }
 
     function member()
     {
