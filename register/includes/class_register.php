@@ -48,7 +48,7 @@ class _register
             $tbl_register_guests = $db->tbl_register_guests;
             $datetimeNow = date("Y-m-d");
 
-            $sql = "SELECT `name`, firstname, `date` FROM ".$tbl_register_guests." WHERE `date` LIKE `:date` ";
+            $sql = "SELECT `name`, firstname, `date` FROM ".$tbl_register_guests;
             $stmt = $db->conn->prepare($sql);
             $stmt->bindParam(':date', $datetimeNow);
             $stmt->execute();
