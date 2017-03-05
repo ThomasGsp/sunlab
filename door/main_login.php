@@ -29,7 +29,7 @@ if (isset($_SESSION['username'])) {
         <p>Si vous souhaitez accéder au Sunlab et déverrouiller la porte principale, merci de donner vos codes d'accès:<br/></p>
 
         <input name="myusername" id="myusername" type="text" class="form-control" placeholder="Username" autofocus>
-        <input name="mypassword" id="mypassword" type="password" class="form-control" placeholder="Password">
+        <input name="password" id="password" type="password" class="form-control" placeholder="Password">
         <input type="hidden" id="page" name="page" value="door">
         <input type="hidden" id="common" name="common" value="common/">
         <!-- The checkbox remember me is not implemented yet...

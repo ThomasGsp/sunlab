@@ -19,7 +19,7 @@
         <h3>Via votre login / mot de passe</h3>
 
         <input name="myusername" id="myusername" type="text" class="form-control" placeholder="Username" autofocus>
-        <input name="mypassword" id="mypassword" type="password" class="form-control" placeholder="Password">
+        <input name="password" id="password" type="password" class="form-control" placeholder="Password">
         <input type="hidden" name="page" id="page" value="members">
         <input type="hidden" id="common" name="common" value="common/">
         <hr>

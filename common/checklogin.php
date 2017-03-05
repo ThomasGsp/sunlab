@@ -10,9 +10,9 @@ require(dirname(__DIR__).'/common/includes/respobj.php');
 require(dirname(__DIR__).'/register/includes/class_register.php');
 
 
-// Define $myusername and $mypassword
+// Define $myusername and $password
 $username = $_POST['myusername'];
-$password = $_POST['mypassword'];
+$password = $_POST['password'];
 $page = $_POST['page'];
 
 // To protect MySQL injection

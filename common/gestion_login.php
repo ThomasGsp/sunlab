@@ -26,7 +26,7 @@ if (isset($_SESSION['username'])) {
         <h2>Accès à la page de gestion de votre compte</h2>
 
         <input name="myusername" id="myusername" type="text" class="form-control" placeholder="Username" autofocus>
-        <input name="mypassword" id="mypassword" type="password" class="form-control" placeholder="Password">
+        <input name="password" id="password" type="password" class="form-control" placeholder="Password">
         <input type="hidden" id="page" name="page" value="gestion">
         <input type="hidden" id="common" name="common" value="">
 

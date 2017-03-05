@@ -1,7 +1,7 @@
 $(document).ready(function () {
     "use strict";
     $("#submit").click(function () {
-        var username = $("#myusername").val(), password = $("#mypassword").val(), page = $("#page").val(), common = $("#common").val();
+        var username = $("#myusername").val(), password = $("#password").val(), page = $("#page").val(), common = $("#common").val();
 
         function testnfc()
         {
@@ -31,7 +31,7 @@ $(document).ready(function () {
             $.ajax({
                 type: "POST",
                 url: common+"checklogin.php",
-                data: "myusername=" + username + "&mypassword=" + password + "&page=" + page,
+                data: "myusername=" + username + "&password=" + password + "&page=" + page,
                 dataType: 'JSON',
                 success: function (html) {
                     //console.log(html.response + ' ' + html.username);

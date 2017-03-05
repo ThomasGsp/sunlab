@@ -6,12 +6,12 @@ class LoginForm
 {
 
 
-    private function testldap($myusername, $mypassword, $page)
+    private function testldap($myusername, $password, $page)
     {
         $data = $this->getinfouser($myusername);
 
         require(dirname(__DIR__).'/connectors/ldap.php');
-        $ldapconnection = ldaplogin("uid=".$myusername, $mypassword);
+        $ldapconnection = ldaplogin("uid=".$myusername, $password);
         $ldapconnection = json_decode($ldapconnection);
 
         if ($ldapconnection->result)
@@ -26,14 +26,14 @@ class LoginForm
 
     }
 
-    private function testlocal($myusername, $mypassword, $page)
+    private function testlocal($myusername, $password, $page)
     {
 
         $data = $this->getinfouser($myusername);
 
         if (!empty($data))
         {
-            if (password_verify($mypassword, $data->password) || md5($mypassword) == $data->password)
+            if (password_verify($password, $data->password) || md5($password) == $data->password)
                 return $data;
             else
                 return false;
@@ -58,7 +58,7 @@ class LoginForm
     }
 
 
-    public function checkLogin($myusername, $mypassword, $page="")
+    public function checkLogin($myusername, $password, $page="")
     {
         $conf = new GlobalConf;
         $login_timeout = $conf->login_timeout;
@@ -83,10 +83,10 @@ class LoginForm
         }
         else
         {
-            $local = $this->testlocal($myusername, $mypassword, $page);
+            $local = $this->testlocal($myusername, $password, $page);
 
             if ($mod_ldap == true and  $local == false)
-                $ldap = $this->testldap($myusername, $mypassword, $page);
+                $ldap = $this->testldap($myusername, $password, $page);
             else
                 $ldap = false;
 
