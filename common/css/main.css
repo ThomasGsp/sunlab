@@ -58,3 +58,14 @@ hr {
 .form-signin .btn, .form-signup .btn  {
   margin-bottom: 10px;
 }
+
+.bouton
+{
+  color: #000000;
+  font-size:24px;
+  cursor:pointer;
+}
+.bouton:hover
+{
+  text-decoration:underline;
+}

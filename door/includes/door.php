@@ -43,8 +43,7 @@ class TheDoor
             $tbl_door = $db->tbl_door;
             $tbl_members = $db->tbl_members;
             // prepare sql and bind parameters
-            $stmt = $db->conn->prepare("SELECT ".$tbl_door.".dateaccess, ".$tbl_members.".name, ".$tbl_members.".firstname FROM ".$tbl_door.", ".$tbl_members." WHERE ".$tbl_door.".username = ".$tbl_members.".username LIMIT ".$numbers);
-
+            $stmt = $db->conn->prepare("SELECT ".$tbl_door.".dateaccess, ".$tbl_members.".name, ".$tbl_members.".firstname FROM ".$tbl_door.", ".$tbl_members." WHERE ".$tbl_door.".username = ".$tbl_members.".username ORDER BY ".$tbl_door.".ID DESC LIMIT ".$numbers);
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_OBJ);
 

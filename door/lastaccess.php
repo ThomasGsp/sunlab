@@ -6,7 +6,7 @@ require(dirname(__DIR__).'/register/common/config.php');
 require(dirname(__DIR__).'/register/common/includes/dbconn.php');
 
 $door = new TheDoor;
-$list = $door->LastAccessDoor(3);
+$list = $door->LastAccessDoor(5);
 
 $html = '';
 foreach ($list as $last)

@@ -20,9 +20,8 @@ require(dirname(__DIR__).'/register/common/includes/functions.php');
 require(dirname(__DIR__).'/register/includes/class_register.php');
 
 $listregister = new _register();
-$listregister->listdaymembers();
+$menbersregister = $listregister->listdaymembers();
 
-print_r($listregister);
 ?>
 
 
@@ -35,6 +34,23 @@ print_r($listregister);
     <!-- Bootstrap -->
     <link href="common/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="common/css/main.css" rel="stylesheet" media="screen">
+
+    <script type="application/javascript">
+        function afficher_cacher(id)
+        {
+            if(document.getElementById(id).style.visibility=="hidden")
+            {
+                document.getElementById(id).style.visibility="visible";
+                document.getElementById('bouton_'+id).innerHTML='>> Cacher la liste des inscrits du jour << ';
+            }
+            else
+            {
+                document.getElementById(id).style.visibility="hidden";
+                document.getElementById('bouton_'+id).innerHTML='>> Afficher la liste des inscrits du jour <<';
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -48,16 +64,38 @@ print_r($listregister);
                     - Si vous êtes visiteur ou membre sans compte, veuillez remplir le formulaire.</h4>
         </p>
 
-        <button name="action" value="member" class="btn btn-primary btn-lg btn-block" type="submit">Je suis membre avec un compte.</button>
-        <button name="action" value="memberext" class="btn btn-primary btn-lg btn-block" type="submit">Je suis membre sans compte et souhaite en créer un.</button>
+        <button name="action" value="member" class="btn btn-primary btn-lg btn-block" type="submit" disabled>Je suis membre avec un compte.</button>
+        <button name="action" value="memberext" class="btn btn-primary btn-lg btn-block" type="submit" disabled>Je suis membre sans compte et souhaite en créer un.</button>
         <button name="action" value="guest" class="btn btn-default btn-lg btn-block" type="submit">Je suis visiteur ou membre sans compte.</button>
     </form>
 
-    <h2> Statistiques </h2>
 
-    Inscrits du jour: <br/>
+    <span class="bouton" id="bouton_tableaumembresinscripts" onclick="afficher_cacher('tableaumembresinscripts');"> >> Afficher la liste des inscrits du jour << </span>
+    <div id="tableaumembresinscripts">
+        <table  id="membergestion" class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date</th>
+            </thead>
+            <tbody>
 
+            <?php
+            foreach ($menbersregister as $member)
+            {
+                echo '<tr><td>' .$member->name. '</td><td>' .$member->firstname. '</td> <td>' .$member->date. '</td> </tr>';
+            }
 
+            ?>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript">
+        //<!--
+        afficher_cacher('tableaumembresinscripts');
+        //-->
+    </script>
 </div> <!-- /container -->
 </body>
 </html>
