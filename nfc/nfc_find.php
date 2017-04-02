@@ -1,5 +1,6 @@
 <?php
 $text ="";
+require(dirname(__DIR__).'/common/config.php');
 if(isset($_POST["submit"])) {
     if ($_POST["submit"] == true) {
         require(dirname(__DIR__).'/nfc/includes/getid.php');
@@ -41,7 +42,7 @@ if(isset($_POST["submit"])) {
 
             <button name="submit" id="submit" class="btn btn-lg btn-primary btn-block" type="submit" value="true">OBTENIR L'ID</button>
             <?php echo $text; ?>
-            <a href="index.php">Index</a>
+            <a href="<?php echo $inplace; ?>">Index</a>
         </form>
 
 </div> <!-- /container -->

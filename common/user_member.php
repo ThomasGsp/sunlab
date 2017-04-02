@@ -61,7 +61,7 @@ require(dirname(__DIR__).'/common/includes/userinfo.php');
                 <td><a href="user_modif.php?c=phone">Modifier</a></td>
             </tr>
             <tr>
-                <td>Identifiant carte NFC <br/> <a target="_blank" href="http://nfc.sunlab.org">Trouver l'ID de sa carte</a></td>
+                <td>Identifiant carte NFC <br/> <a target="_blank" href="<?php echo $nfc_url; ?>">Trouver l'ID de sa carte</a></td>
                 <td><?php echo $user->nfccard; ?></td>
                 <td><a href="user_modif.php?c=nfccard">Modifier</a></td>
             </tr>

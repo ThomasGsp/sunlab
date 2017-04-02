@@ -7,6 +7,8 @@ $max_attempts = 15;
 //Timeout (in seconds) after max attempts are reached
 $login_timeout = 10;
 
+$nfc_url = "http://nfc.sunlab.org";
+$inplace = "http://presence.mysunlab.org";
 
 // Authentification module
 $mod_ldap = true;

@@ -33,11 +33,14 @@ $userlist = getallusers();
     <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
     <script type="application/javascript">
-        $(document).ready(function(){
-            $('#membergestion').DataTable();
-        });
+        /*
+
+        */
 
         $(function(){
+            $(document).ready(function(){
+                $('#membergestion').DataTable();
+            });
             $('.valid').click(function(){
                 var elem = $(this);
                 $("#message").html("<img src='images/ajax-loader.gif'> Action en cours ... ");
@@ -53,20 +56,6 @@ $userlist = getallusers();
                 return false;
             });
 
-            $('.validdoor').click(function(){
-                var elem = $(this);
-                $("#message").html("<img src='images/ajax-loader.gif'> Action en cours ... ");
-                $.ajax({
-                    type: "GET",
-                    url: "../door_validation.php",
-                    data: "uid="+elem.attr('data-id')+"&v="+elem.attr('data-type'),
-                    dataType:"html",
-                    success: function() {
-                        location.reload();
-                    }
-                });
-                return false;
-            });
 
             $('.reset').click(function(){
                 var elem = $(this);
@@ -99,6 +88,20 @@ $userlist = getallusers();
                 return false;
             });
 
+            $('.validdoor').click(function(){
+                var elem = $(this);
+                $("#message").html("<img src='images/ajax-loader.gif'> Action en cours ... ");
+                $.ajax({
+                    type: "GET",
+                    url: "../door_validation.php",
+                    data: "uid="+elem.attr('data-id')+"&v="+elem.attr('data-type'),
+                    dataType:"html",
+                    success: function() {
+                        location.reload();
+                    }
+                });
+                return false;
+            });
         });
     </script>
 </head>
@@ -143,7 +146,7 @@ $userlist = getallusers();
                 <td><a href="user_modif.php?c=phone">Modifier</a></td>
             </tr>
             <tr>
-                <td>Identifiant carte NFC <br/> <a target="_blank" href="http://nfc.sunlab.org">Trouver l'ID de sa carte</a></td>
+                <td>Identifiant carte NFC <br/> <a target="_blank" href="<?php echo $nfc_url; ?>">Trouver l'ID de sa carte</a></td>
                 <td><?php echo $user->nfccard; ?></td>
                 <td><a href="user_modif.php?c=nfccard">Modifier</a></td>
             </tr>
@@ -198,19 +201,19 @@ $userlist = getallusers();
                     <td><?php echo $userinfo->email; ?></td>
                     <td><?php echo $userinfo->phone; ?></td>
                     <td><?php echo $userinfo->nfccard; ?></td>
-                    <td> <?php echo '<a  href="#" class="reset" data-username="'.$userinfo->username.'"">Reset</a>'; ?> </td>
+                    <td> <?php echo '<a  href="#" class="reset" data-username="'.$userinfo->username.'">Reset</a>'; ?> </td>
                     <td><?php
                         if ($userinfo->verified == 1)
-                            echo '<a href="#" class="valid" data-type=0 data-id="'.$userinfo->id.'"">Invalider</a>';
+                            echo '<a href="#" class="valid" data-type=0 data-id="'.$userinfo->id.'">Invalider</a>';
                         else
-                            echo '<a href="#" class="valid" data-type=1 data-id="'.$userinfo->id.'"">Valider</a>';
+                            echo '<a href="#" class="valid" data-type=1 data-id="'.$userinfo->id.'">Valider</a>';
                         ?>
                     </td>
                     <td><?php
                         if ($userinfo->accessdoor == 1)
-                            echo '<a href="#" class="validdoor" data-type=0 data-id="'.$userinfo->id.'"">Invalider</a>';
+                            echo '<a href="#" class="validdoor" data-type=0 data-id="'.$userinfo->id.'">Invalider</a>';
                         else
-                            echo '<a href="#" class="validdoor" data-type=1 data-id="'.$userinfo->id.'"">Valider</a>';
+                            echo '<a href="#" class="validdoor" data-type=1 data-id="'.$userinfo->id.'">Valider</a>';
                         ?>
                     </td>
                 </tr>
