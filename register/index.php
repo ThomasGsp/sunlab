@@ -64,8 +64,8 @@ $menbersregister = $listregister->listdaymembers();
                     - Si vous êtes visiteur ou membre sans compte, veuillez remplir le formulaire.</h4>
         </p>
 
-        <button name="action" value="member" class="btn btn-primary btn-lg btn-block" type="submit" disabled>Je suis membre avec un compte.</button>
-        <button name="action" value="memberext" class="btn btn-primary btn-lg btn-block" type="submit" disabled>Je suis membre sans compte et souhaite en créer un.</button>
+        <button name="action" value="member" class="btn btn-primary btn-lg btn-block" type="submit" >Je suis membre avec un compte.</button>
+        <button name="action" value="memberext" class="btn btn-primary btn-lg btn-block" type="submit" >Je suis membre sans compte et souhaite en créer un.</button>
         <button name="action" value="guest" class="btn btn-default btn-lg btn-block" type="submit">Je suis visiteur ou membre sans compte.</button>
     </form>
 
