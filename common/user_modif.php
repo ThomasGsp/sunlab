@@ -87,8 +87,8 @@ else
         <form action="user_modif.php" method="post">
             <div class="form-group">
                 <label for="datad"><?php echo $text; ?></label>
-                <input class="form-control"  <?php if($_GET['c'] == "password") { echo 'type="password"'; }?>name="data" id="data" value="<?php echo $value; ?>">
-                <input type="hidden" name="type" value="<?php echo $_GET['c']; ?>">
+                <input class="form-control" <?php if($_GET['c'] == "password") { echo 'type="password"'; }?> name="data" id="data" value="<?php echo $value; ?>">
+                <input type="hidden" name="type" id="type" value="<?php echo $_GET['c']; ?>">
             </div>
             <button type="submit" class="btn btn-default">Enregistrer</button>
         </form>
