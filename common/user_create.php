@@ -78,6 +78,7 @@ else {
             //Send verification email
             $m = new MailSender;
             $m->sendMail($sendemailverif, $newuser, $newid, 'Verify', $userinfo);
+            $m->sendMail($newemail, $newuser, $newid, 'mailuser', $userinfo);
             if($authtype == "local")
                 echo "<script type='text/JavaScript'> setTimeout('location.href = \"gestion_login.php\";',10000); </script> ";
             else

@@ -54,7 +54,28 @@ class MailSender
 
             $mail->AltBody  =  $verifymsg . $verifyurl;
 
-        } elseif ($type == 'Active') {
+        }
+        elseif ($type == 'mailuser') {
+
+            //Set the subject line
+            $mail->Subject = $user . ' -- Compte Sunlab';
+
+            //Set the body of the message
+            $mail->Body =
+                "Bonjour, nous avons bien enregistré votre compte avec les informations suivantes:".
+                "----------------------------"."<br/>".
+                "Nom:" .$userinfo["name"]."<br/>".
+                "Prénom:" .$userinfo["firstname"]."<br/>".
+                "Pseudo:" .$userinfo["user"]."<br/>".
+                "Tél:" .$userinfo["phone"]."<br/>".
+                "email:" .$userinfo["email"]."<br/>".
+                "Type d'authentification:" .$userinfo["authtype"]."<br/>".
+                "----------------------------"."<br/>".
+                "Un administrateur procèdera prochainement à son activation.".
+                "".
+                "Le SUNLAB.";
+        }
+        elseif ($type == 'Active') {
 
             //Set the subject line
             $mail->Subject = $site_name . ' Compte validé!';
