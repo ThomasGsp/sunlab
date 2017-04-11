@@ -1,6 +1,6 @@
 <?php
 
-require(dirname(__DIR__).'/includes/dbconn.php');
+require_once(dirname(__DIR__).'/includes/dbconn.php');
 
 class _user_informations
 {

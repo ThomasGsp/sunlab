@@ -6,7 +6,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 require(dirname(__DIR__).'/config.php');
-require(dirname(__DIR__).'/includes/dbconn.php');
+require_once(dirname(__DIR__).'/includes/dbconn.php');
 require(dirname(__DIR__).'/includes/functions.php');
 require(dirname(__DIR__).'/includes/selectemail.php');
 require(dirname(__DIR__).'/includes/class_user.php');
