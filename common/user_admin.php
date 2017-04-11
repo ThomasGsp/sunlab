@@ -62,7 +62,7 @@ $userlist = getallusers();
                 $("#message").html(".<img src='images/ajax-loader.gif'> Reset en cours ..");
                 $.ajax({
                     type: "GET",
-                    url: "include/resetpw.php",
+                    url: "includes/resetpw.php",
                     data: "username="+elem.attr('data-username'),
                     dataType:"html",
                     success: function() {
