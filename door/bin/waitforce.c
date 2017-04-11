@@ -20,9 +20,8 @@ int main(void)
 
             digitalWrite (door, 1);
             delay (3000);
+            digitalWrite (door, 0);
         }
-        digitalWrite (door, 0);
-        delay (200);
     }
     return 0 ;
 }
