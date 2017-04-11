@@ -74,6 +74,8 @@ class MailSender
                 "Un administrateur procèdera prochainement à son activation.".
                 "".
                 "Le SUNLAB.";
+
+            $mail->AltBody  =  "Bonjour, nous avons bien enregistré votre compte, un administrateur procèdera prochainement à son activation.";
         }
         elseif ($type == 'Active') {
 

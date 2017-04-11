@@ -35,6 +35,7 @@ if($updatepw == "true") {
     //Send verification email
     $m = new MailSender;
     $m->newpw = $uncryptpw;
+    error_log($changeuser->email, $changeuser->username, "", "resetpw");
     $m->sendMail($changeuser->email, $changeuser->username, "", "resetpw");
     echo "Nouveau mot de passe envoyé par mail à l'utilisateur.";
 }
