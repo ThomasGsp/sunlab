@@ -15,9 +15,9 @@ require(dirname(__DIR__).'/common/includes/userinfo.php');
 if (isset($_POST["data"]))
 {
 
-    if(isset($_GET['c']))
+    if(isset($_POST['type']))
     {
-        if($_GET['c'] == "password")
+        if($_POST['type'] == "password")
             $result = $getinfouser->changevalue($_POST["type"], password_hash($_POST["data"], PASSWORD_DEFAULT));
     }
     else
