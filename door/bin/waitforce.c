@@ -20,7 +20,10 @@ int main(void)
 
             digitalWrite (door, 1);
             delay (3000);
-            digitalWrite (door, 0);
+            if (! digitalRead(butPin)) // Button is released if this returns 1
+            {
+                digitalWrite (door, 0);
+            }
         }
     }
     return 0 ;
