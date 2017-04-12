@@ -18,6 +18,7 @@ int main(void)
         if (digitalRead(butPin)) // Button is released if this returns 1
         {
 
+
             digitalWrite (door, 1);
             delay (3000);
             if (! digitalRead(butPin)) // Button is released if this returns 1
