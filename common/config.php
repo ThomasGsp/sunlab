@@ -56,8 +56,3 @@ $invalid_mod = '$adminemail is not a valid email address';
 
 //Makes readable version of timeout (in minutes). Do not change.
 $timeout_minutes = round(($login_timeout / 60), 1);
-
-foreach ($plugins_list as $plugin)
-{
-    include_once('plugins/'.$plugin.'.php');
-}

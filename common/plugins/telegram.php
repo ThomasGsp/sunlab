@@ -6,8 +6,8 @@
  * Time: 19:06
  */
 
-$token = "bot388538820:AAEidUNC0BjcUHFlD9XGL4nP2oljYmMSwcw";
-$chatid = "-36455667";
+$token = "botYYYY:xxxx";
+$chatid = "-xxxx";
 
 
 function sendMessage($chatID, $messaggio, $token) {
