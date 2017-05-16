@@ -30,6 +30,13 @@ if($_SESSION['access'] == 1)
         $datetimeNow = date("Y-m-d H:i:s");
         $door->LogAccessDoor($_SESSION['username'], get_client_ip(), $datetimeNow);
         $door->OpenTheDoor();
+
+        if(in_array("telegram", $plugins_list))
+        {
+            $textebot = $_SESSION['username']. "entre dans la caverne... enfin le sunlab !";
+            sendMessage($chatid, $textebot, $token);
+        }
+
     }
 }
 else

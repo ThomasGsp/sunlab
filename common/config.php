@@ -13,6 +13,11 @@ $inplace = "http://presence.mysunlab.org";
 // Authentification module
 $mod_ldap = true;
 
+// Plugin list
+$plugins_list = ["telegram"];
+
+
+
 //ONLY set this if you want a moderator to verify users and not the users themselves, otherwise leave blank or comment out
 $admin_email = 'mail@demo.fr';
 
@@ -51,3 +56,8 @@ $invalid_mod = '$adminemail is not a valid email address';
 
 //Makes readable version of timeout (in minutes). Do not change.
 $timeout_minutes = round(($login_timeout / 60), 1);
+
+foreach ($plugins_list as $plugin)
+{
+    include_once('plugins/'.$plugin.'.php');
+}
