@@ -5,3 +5,5 @@ $ldapServerPort = 389;
 $baseDN = "dc=site,dc=fr";
 $ldapOrgUnit="ou=people";
 
+$ldapServerAccount = "srv";
+$ldqpServerPssw = "123";
