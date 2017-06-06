@@ -54,7 +54,7 @@ function ldapGetFacebook()
 
   ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, 3);
 
-  $bind = @ldap_bind($ldap, $ldaprdn, $ldapServerPasswd);
+  $bind = @ldap_bind($ldap, $ldaprdn, $ldapServerPwd);
 
   $userList = array();
   
