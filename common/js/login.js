@@ -1,7 +1,7 @@
 $(document).ready(function () {
     "use strict";
     $("#submit").click(function () {
-        var username = $("#myusername").val(), password = $("#password").val(), page = $("#page").val(), common = $("#common").val();
+        var username = btoa($("#myusername").val()), password = btoa($("#password").val()), page = $("#page").val(), common = $("#common").val();
 
         function testnfc()
         {

@@ -11,8 +11,8 @@ require(dirname(__DIR__).'/register/includes/class_register.php');
 
 
 // Define $myusername and $password
-$username = $_POST['myusername'];
-$password = $_POST['password'];
+$username = base64_decode($_POST['myusername']);
+$password = base64_decode($_POST['password']);
 $page = $_POST['page'];
 
 // To protect MySQL injection
