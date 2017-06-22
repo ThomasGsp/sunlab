@@ -36,7 +36,6 @@ if($_SESSION['access'] == 1)
             require(dirname(__DIR__) . '/common/plugins/telegram.php');
             $textebot =  $user->name .".". $user->firstname[0]." entre dans le sunlab !";
             sendMessage($chatid, $textebot, $token);
-            error_log('ACCESS');
         }
     }
 }
