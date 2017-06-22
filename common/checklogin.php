@@ -16,8 +16,11 @@ $password = base64_decode($_POST['password']);
 $page = $_POST['page'];
 
 // To protect MySQL injection
-$username = addslashes($username);
-$password = addslashes($password);
+// Problem with special char
+//$username = addslashes($username);
+//$password = addslashes($password);
+
+
 $page =  addslashes($page);
 $response = '';
 $loginCtl = new LoginForm;
