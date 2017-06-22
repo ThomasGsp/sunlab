@@ -12,6 +12,7 @@ class _user_informations
     var $email;
     var $verified;
     var $admin;
+    var $picture;
 
 
     function getuserinfo()

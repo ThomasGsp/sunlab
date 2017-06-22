@@ -1,0 +1,5 @@
+.idea
+common/connectors/ldap.conf.php
+common/config.php
+common/dbconf.php
+*.geany
