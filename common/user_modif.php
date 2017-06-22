@@ -12,63 +12,58 @@ require(dirname(__DIR__).'/common/includes/functions.php');
 require(dirname(__DIR__).'/common/includes/class_user.php');
 require(dirname(__DIR__).'/common/includes/userinfo.php');
 
-if (isset($_POST["data"]))
-{
+if (isset($_POST["data"])) {
 
-    if(isset($_POST['type']))
-    {
-        if($_POST['type'] == "password")
-            $result = $getinfouser->changevalue($_POST["type"], password_hash($_POST["data"], PASSWORD_DEFAULT));
-    }
-    else
-        $result = $getinfouser->changevalue($_POST["type"], $_POST["data"]);
+  if (isset($_POST['type'])) {
+    if ($_POST['type'] == "password") {
+      $result = $getinfouser->changevalue($_POST["type"], password_hash($_POST["data"], PASSWORD_DEFAULT));
+    } else {
+      $result = $getinfouser->changevalue($_POST["type"], $_POST["data"]);
 
-
-    if ($_POST["type"] == "username") {
+      if ($_POST["type"] == "username") {
         header("location:user_deco.php");
         exit(0);
-    }
-    else
-    {
+      } else {
         header("location:user.php");
         exit(0);
-    }
+      }
 
-}
-else
-{
-    $value = "";
-    switch ($_GET['c']) {
-        case "name":
-            $text = "Nom:";
-            $value =  $user->name;
-            break;
-        case "firstname":
-            $text = "Prénom:";
-            $value = $user->firstname;
-            break;
-        case "username":
-            $text = "Pseudo:";
-            $value =  $user->username;
-            break;
-        case "email":
-            $text = "Email:";
-            $value =  $user->email;
-            break;
-        case "phone":
-            $text = "Téléphone:";
-            $value =  $user->phone;
-            break;
-        case "nfccard":
-            $text = "nfccard:";
-            $value =  $user->nfccard;
-            break;
-        case "password":
-            $text = "Nouveau mot de passe:";
-            $value =  "";
-            break;
     }
-}
+  }
+} else {
+  $value = "";
+  switch ($_GET['c']) {
+    case "name":
+      $text = "Nom:";
+      $value = $user->name;
+      break;
+    case "firstname":
+      $text = "Prénom:";
+      $value = $user->firstname;
+      break;
+    case "username":
+      $text = "Pseudo:";
+      $value = $user->username;
+      break;
+    case "email":
+      $text = "Email:";
+      $value = $user->email;
+      break;
+    case "phone":
+      $text = "Téléphone:";
+      $value = $user->phone;
+      break;
+    case "nfccard":
+      $text = "nfccard:";
+      $value = $user->nfccard;
+      break;
+    case "password":
+      $text = "Nouveau mot de passe:";
+      $value = "";
+      break;
+    default:
+      header("location: user.php");
+  }
 ?>
 
 <!DOCTYPE html>
@@ -98,3 +93,4 @@ else
 </body>
 </html>
 
+<?php }
