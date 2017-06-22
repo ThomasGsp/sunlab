@@ -2,9 +2,13 @@
 session_start();
 if (isset($_SESSION['username'])) {
     $_SESSION['lastpage'] = "mainlogin";
-    header("location:index.php");
+   // if(isset($_POST['access']))
+    //    header("location:index.php?signal=yes");
+  //  else
+        header("location:index.php?signal=no");
     exit(0);
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,11 +36,18 @@ if (isset($_SESSION['username'])) {
         <input name="password" id="password" type="password" class="form-control" placeholder="Password">
         <input type="hidden" id="page" name="page" value="door">
         <input type="hidden" id="common" name="common" value="common/">
-        <!-- The checkbox remember me is not implemented yet...
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        -->
+          <!--
+                  <div class="funkyradio">
+                    <div class="funkyradio-success">
+                        <input type="checkbox" name="access" id="access" value="yes" checked/>
+                        <label for="access">Signaler ma présence automatiquement</label>
+                    </div>
+                  </div>
+                   The checkbox remember me is not implemented yet...
+                  <label class="checkbox">
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                  -->
         <button name="Submit" id="submit" class="btn btn-lg btn-primary btn-block" type="submit">OUVRIR LA PORTE</button>
 
         <div id="message"></div>

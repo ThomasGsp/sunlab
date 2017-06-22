@@ -8,10 +8,10 @@ if (!isset($_SESSION['username'])) {
 
 $text = "";
 
+require(dirname(__DIR__).'/common/config.php');
 require(dirname(__DIR__).'/common/includes/functions.php');
 require(dirname(__DIR__).'/common/includes/class_user.php');
 require(dirname(__DIR__).'/common/includes/userinfo.php');
-require(dirname(__DIR__) .'/common/config.php');
 
 if ($user->accessdoor == 1)
     $_SESSION['access'] = 1;
@@ -23,9 +23,7 @@ if($_SESSION['access'] == 1)
 {
     if($_SESSION['lastpage'] == "mainlogin")
     {
-        require "common/includes/functions.php";
         require "includes/door.php";
-        $_SESSION['lastpage'] = "index";
         $text = '<div class="alert alert-success">Information: La porte vient d\'être ouverte pour <strong> 3 secondes</strong>. </div>';
         // CODE OPEN door
         $door = new TheDoor;
@@ -36,10 +34,10 @@ if($_SESSION['access'] == 1)
         if(in_array("telegram", $plugins_list))
         {
             require(dirname(__DIR__) . '/common/plugins/telegram.php');
-            $textebot = $_SESSION['username']. " (". $user->name ." ". $user->firstname.") entre dans le sunlab !";
+            $textebot =  $user->name .".". $user->firstname[0]." entre dans le sunlab !";
             sendMessage($chatid, $textebot, $token);
+            error_log('ACCESS');
         }
-
     }
 }
 else
@@ -70,10 +68,10 @@ $_SESSION['lastpage'] = "index";
               Il est géré par l'<a href="http://hatlab.fr">association Hatlab</a> et il est situé au 185 Avenue Leclerc &agrave; Viroflay.<br/>
               Le Sunlab travaille en relation étroite avec le <a href="http://sqylab.org">Sqylab, le Fablab basé à La Verrriere</a>, juste en face de la gare SNCF.</p>
 
-            <?php echo $text; ?>
+            <?php  echo $text; ?>
 
 
-        <a href="main_login.php" class="btn btn-lg btn-primary btn-block">Ouvrir de nouveau</a>
+        <a href="main_login.php?signal=no" class="btn btn-lg btn-primary btn-block">Ouvrir de nouveau</a>
         <a href="common/user_deco.php?type=soft">Se déconnecter</a> | <a href="common/user.php">Gestion</a> | <a href="lastaccess.php"> Dernières ouvertures </a>
       </div>
     </div> <!-- /container -->
