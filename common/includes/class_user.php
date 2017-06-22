@@ -63,8 +63,9 @@ class _user_informations
         try {
             $db = new DbConn;
             $tbl_members = $db->tbl_members;
-            $sql = "UPDATE ".$tbl_members." SET ".$type."='".$newvalue."' WHERE id = '".$this->id."'";
-            $stmt = $db->conn->prepare($sql);
+            $stmt = $db->conn->prepare("UPDATE ".$tbl_members." SET ".$type."=:newvalue WHERE id=:id");;
+            $stmt->bindParam(":newvalue",$newvalue);
+            $stmt->bindParam(":id",$this->id);
             $stmt->execute();
             $err = '';
         }
