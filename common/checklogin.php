@@ -17,8 +17,8 @@ $page = $_POST['page'];
 
 // To protect MySQL injection
 // Problem with special char
-//$username = addslashes($username);
-//$password = addslashes($password);
+$username = addslashes($username);
+$password = addslashes($password);
 
 
 $page =  addslashes($page);

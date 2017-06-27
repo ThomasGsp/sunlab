@@ -18,12 +18,15 @@ if (isset($_POST["data"]))
   {
       if ($_POST['type'] == "password") {
 
-          $result = $getinfouser->changevalue($_POST["type"], password_hash($_POST["data"], PASSWORD_DEFAULT));
+          $result = $getinfouser->changevalue($_POST["type"], password_hash(addslashes($_POST["data"]), PASSWORD_DEFAULT));
       } else {
-          $result = $getinfouser->changevalue($_POST["type"], $_POST["data"]);
           if ($_POST["type"] == "username") {
+              $result = $getinfouser->changevalue($_POST["type"], addslashes($_POST["data"]));
               header("location:user_deco.php");
               exit(0);
+          }
+          else{
+              $result = $getinfouser->changevalue($_POST["type"], addslashes($_POST["data"]));
           }
       }
       header("location:user.php");
