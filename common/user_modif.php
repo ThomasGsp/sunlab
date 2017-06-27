@@ -26,7 +26,7 @@ if (isset($_POST["data"]))
               exit(0);
           }
           else{
-              $result = $getinfouser->changevalue($_POST["type"], addslashes($_POST["data"]));
+              $result = $getinfouser->changevalue($_POST["type"], $_POST["data"]);
           }
       }
       header("location:user.php");
