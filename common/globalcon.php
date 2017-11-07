@@ -1,6 +1,6 @@
 <?php
 //SYSTEM SETTINGS
-$base_url = 'http://' . $_SERVER['SERVER_NAME'];
+$base_url = 'https://' . $_SERVER['SERVER_NAME'];
 $signin_url = $base_url;
 
 //DO NOT CHANGE

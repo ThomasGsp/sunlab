@@ -15,7 +15,7 @@ class MailSender
         // substr() trims "user_create.php" off of the current URL and replaces with verifyuser.php
         // Can pass 1 (verified) or 0 (unverified/blocked) into url for "v" parameter
         $verifyurl = $base_url . "/common/user_verify.php?v=1&uid=" . $id;
-        $verifyporteurl = $base_url. "/common/door_validation.php?v=1&uid=" . $id;
+        $verifyporteurl = $base_url. "/door_validation.php?v=1&uid=" . $id;
 
         // Create a new PHPMailer object
         // ADD sendmail_path = "env -i /usr/sbin/sendmail -t -i" to php.ini on UNIX servers
