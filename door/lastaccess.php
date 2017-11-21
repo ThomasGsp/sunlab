@@ -43,8 +43,8 @@ foreach ($list as $last)
             <thead>
                 <tr>
                     <th>Date </th>
-                    <th>Prénom</th>
                     <th>Nom</th>
+                    <th>Prénom</th>
                 </tr>
             </thead>
             <tbody>
