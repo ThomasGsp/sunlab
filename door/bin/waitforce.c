@@ -26,6 +26,7 @@ int main(void)
                 digitalWrite (door, 0);
             }
         }
+        delay(200); // wait 200 ms to avoid 100% CPU consumption
     }
     return 0 ;
 }
