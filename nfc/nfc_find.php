@@ -6,10 +6,10 @@ if(isset($_POST["submit"])) {
         require(dirname(__DIR__).'/nfc/includes/getid.php');
         $text = '';
         if (!empty($uidcard)){
-            $text = '<div class="alert alert-success">L\'id de votre carte: ' . substr(hash('sha1', $uidcard), 0, 10). ' </div>';
+            $text = '<div class="alert alert-success">L\'id de votre carte : ' . substr(hash('sha1', $uidcard), 0, 10). ' </div>';
         }
         else {
-            $text = '<div class="alert alert-warning">Aucune carte trouvé. <br/> Si votre carte est correctement placé, elle est peu-être imcompatible avec le lecteur.</div>';
+            $text = '<div class="alert alert-warning">Aucune carte trouvée. <br/> Si votre carte est correctement placée, elle est peut-être imcompatible avec le lecteur.</div>';
         }
     }
 }
@@ -35,9 +35,9 @@ if(isset($_POST["submit"])) {
                 Vous pouvez lier à votre compte Sunlab n'importe quelle carte NFC.<br/>
                 Cela peut être la carte fournie par le Sunlab, mais aussi votre PassNavigo, CB ou encore la clé pour le café du bureau...
                 <br/><br/>
-                L'identifiant NFC qui vous sera affiché n'est pas le numéro réél de votre carte, mais une empreinte.
+                L'identifiant NFC qui vous sera affiché n'est pas le numéro réel de votre carte, mais une empreinte.
                 <br/><br/>
-                Placer votre carte sur le lecteur NFC et cliquer sur le bouton ci-dessous:
+                Placer votre carte sur le lecteur NFC et cliquer sur le bouton ci-dessous :
             </h4>
 
             <button name="submit" id="submit" class="btn btn-lg btn-primary btn-block" type="submit" value="true">OBTENIR L'ID</button>
